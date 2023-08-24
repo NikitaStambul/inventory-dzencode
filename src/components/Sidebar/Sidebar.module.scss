@@ -1,0 +1,43 @@
+.sidebar {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: hsl(204,20%,100%);
+  gap: 24px;
+  width: var(--sidebar-width);
+  padding: 24px 12px;
+  flex-shrink: 0;
+
+  &__imageContainer {
+    display: flex;
+    position: relative;
+  }
+
+  &__userSettings {
+    position: absolute;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    right: 8px;
+    bottom: 8px;
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    background-color: #fff;
+    border: none;
+
+    box-shadow: 0 .35rem .35rem rgba(black, .075);
+  }
+
+  &__image {
+    display: flex;
+    border-radius: 50%;
+  }
+
+  &__nav {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 12px;
+  }
+}

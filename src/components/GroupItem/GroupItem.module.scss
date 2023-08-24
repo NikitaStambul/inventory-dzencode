@@ -1,0 +1,47 @@
+.item {
+  display: flex;
+  align-items: center;
+  position: relative;
+  cursor: pointer;
+  gap: 24px;
+  padding: 8px 48px 8px 16px;
+  width: 100%;
+  height: 80px;
+  background-color: #fff;
+  border-radius: 4px;
+  overflow: hidden;
+  border: 1px solid rgba(128, 128, 128, 0.44);
+  color: var(--color-foreground-muted);
+
+  &:hover {
+    background-color: #f1f1f1;
+  }
+
+  &__menu {
+    width: 48px;
+    height: 48px;
+  }
+
+  &__info {
+    display: flex;
+    flex-direction: column;
+  }
+
+  &__count {
+    color: var(--color-foreground-secondary);
+    font-size: 20px;
+  }
+
+  &__selected {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    width: 32px;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    background-color: rgb(109, 187, 176);
+    color: #fff;
+  }
+}

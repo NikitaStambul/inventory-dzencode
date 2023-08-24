@@ -1,9 +1,5 @@
-import { Button, Container } from '@/lib/bootstrap';
-
-export default function Home() {
+export default function Incoming() {
   return (
-    <Container>
-      <Button>TEST</Button>
-    </Container>
+    <div className="">Incoming</div>
   );
 }

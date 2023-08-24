@@ -1,9 +1,12 @@
-import 'bootstrap/dist/css/bootstrap.min.css';
-import './globals.css';
+import '@/styles/main.scss';
+import styles from './layout.module.scss';
 import React from 'react';
 import Providers from '@/components/Providers';
 import type { Metadata } from 'next';
 import { Inter } from 'next/font/google';
+import Header from '@/components/Header';
+import Sidebar from '@/components/Sidebar/Sidebar';
+import classNames from 'classnames';
 
 const inter = Inter({ subsets: ['latin'] });
 
@@ -20,7 +23,15 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={inter.className}>
-        <Providers>{children}</Providers>
+        <Providers>
+          <div className="vh-100 vw-100">
+            <Header />
+            <div className={styles.content}>
+              <Sidebar />
+              <main className={classNames(styles.main)}>{children}</main>
+            </div>
+          </div>
+        </Providers>
       </body>
     </html>
   );

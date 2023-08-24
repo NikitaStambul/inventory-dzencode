@@ -2,7 +2,13 @@
 
 import React from 'react';
 import StoreProvider from '@/store/StoreProvider';
+import BootstrapProvider from './BootstrapProvider/BootstrapProvider';
 
 export default function Providers({ children }: { children: React.ReactNode }) {
-  return <StoreProvider>{children}</StoreProvider>;
+  return (
+    <>
+      <BootstrapProvider />
+      <StoreProvider>{children}</StoreProvider>
+    </>
+  );
 }

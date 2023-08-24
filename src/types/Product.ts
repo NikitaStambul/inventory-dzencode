@@ -26,10 +26,10 @@ interface Price {
 export const mockProducts: Product[] = [
   {
     id: 1,
-    serialNumber: 1234,
+    serialNumber: 1000084135,
     isNew: 1,
-    photo: 'pathToFile.jpg',
-    title: 'Product 1',
+    photo: 'monitor.png',
+    title: 'Hewlett-Packard Monitor HP X27q (2V7U5AA)',
     type: 'Monitors',
     specification: 'Specification 1',
     guarantee: {
@@ -45,12 +45,12 @@ export const mockProducts: Product[] = [
   },
   {
     id: 2,
-    serialNumber: 1234,
-    isNew: 1,
-    photo: 'pathToFile.jpg',
-    title: 'Product 1',
-    type: 'Monitors',
-    specification: 'Specification 1',
+    serialNumber: 1000084136,
+    isNew: 2,
+    photo: 'keyboard.webp',
+    title: 'Apple Magic Keyboard with Touch ID for Mac models with Apple silicon (MK293)',
+    type: 'Keyboards',
+    specification: 'Specification 2',
     guarantee: {
       start: '2017-06-29 12:09:33',
       end: '2017-06-29 12:09:33',

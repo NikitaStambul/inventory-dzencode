@@ -1,9 +1,14 @@
-import { configureStore, createReducer } from '@reduxjs/toolkit';
-
-const reducer = createReducer([], () => {});
+import { configureStore } from '@reduxjs/toolkit';
+import ordersReducer from './slices/ordersSlice';
+import productsReducer from './slices/productsSlice';
+import deleteProductModalReducer from './slices/deleteProductModalSlice';
 
 export const store = configureStore({
-  reducer,
+  reducer: {
+    ordersState: ordersReducer,
+    productsState: productsReducer,
+    deleteProductModalState: deleteProductModalReducer,
+  },
 });
 
 export type RootState = ReturnType<typeof store.getState>;

@@ -1,0 +1,17 @@
+.link {
+  position: relative;
+  text-decoration: none;
+  text-transform: uppercase;
+  color: var(--color-foreground);
+  padding: 4px 8px;
+
+  &--active::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 4px;
+    background-color: var(--color-dark-green);
+  }
+}

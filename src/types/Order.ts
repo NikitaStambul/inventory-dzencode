@@ -1,4 +1,4 @@
-import { Product } from './Product';
+import { Product, mockProducts } from './Product';
 
 export interface Order {
   id: number;
@@ -14,20 +14,20 @@ export const mockOrders: Order[] = [
     title: 'Order 1',
     date: '2017-06-29 12:09:33',
     description: 'desc',
-    products: [],
+    products: [mockProducts[0], mockProducts[1]],
   },
   {
     id: 2,
     title: 'Order 2',
     date: '2017-06-29 12:09:33',
     description: 'desc',
-    products: [],
+    products: [mockProducts[1]],
   },
   {
     id: 3,
     title: 'Order 3',
     date: '2017-06-29 12:09:33',
     description: 'desc',
-    products: [],
+    products: [mockProducts[0]],
   },
 ];
