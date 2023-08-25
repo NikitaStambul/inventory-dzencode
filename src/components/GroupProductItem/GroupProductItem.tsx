@@ -21,7 +21,7 @@ export default function GroupProductItem({
   };
 
   return (
-    <div className={styles.item}>
+    <div className={styles.item + ' border-top border-bottom'}>
       <span
         className={classNames(styles.item__statusPoint, {
           [styles['item__statusPoint--available']]: isAvailable,

@@ -23,13 +23,20 @@ export default function GroupsList({
           />
         ))}
       </div>
-      <div className={styles.list__products}>
+      <div className={styles.list__products + ' border'}>
         {selectedOrder ? (
           <>
             <h4 className={styles.list__title}>{selectedOrder.title}</h4>
-            <GroupProductsList products={selectedOrder.products} orderId={selectedId!} />
+            <GroupProductsList
+              products={selectedOrder.products}
+              orderId={selectedId!}
+            />
           </>
-        ) : (<h2 className={styles.list__noSelected}>There is no order selected</h2>)}
+        ) : (
+          <h2 className={styles.list__noSelected}>
+            There is no order selected
+          </h2>
+        )}
       </div>
     </div>
   );

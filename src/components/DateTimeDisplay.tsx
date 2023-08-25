@@ -1,7 +1,6 @@
 'use client';
 
 import { Icons } from '@/components/Icons';
-import styles from './DateTimeDisplay.module.scss';
 import { useState, useEffect } from 'react';
 import { formatDate, formatTime } from '@/helpers/date-time-formatters';
 
@@ -22,11 +21,11 @@ export default function DateTimeDisplay() {
   const formattedTime = formatTime(currentDateTime);
 
   return (
-    <div className={styles.dateTime}>
-      <div className={styles.dateTime__today}>Today</div>
-      <div className={styles.dateTime__content}>
+    <div className="d-flex flex-column justify-content-space-between">
+      <div>Today</div>
+      <div className="d-flex gap-6">
         <div>{formattedDate}</div>
-        <div className={styles.dateTime__time}>
+        <div className="gap-2 d-flex align-items-center">
           {<Icons.watch fill="var(--color-primary)" />}
           {formattedTime}
         </div>

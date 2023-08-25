@@ -19,11 +19,16 @@ export default function ProductItem({ product }: { product: Product }) {
   const formattedEnd = formatDate(new Date(product.guarantee.end));
 
   return (
-    <div className={styles.item}>
+    <div
+      style={{ height: 64, width: 'max-content' }}
+      className="gap-4 d-flex align-items-center rounded py-2 px-4 border-top border-bottom"
+    >
       <span
-        className={classNames(styles.item__statusPoint, {
-          [styles['item__statusPoint--available']]: isAvailable,
-        })}
+        style={{ width: 8, height: 8 }}
+        className={classNames(
+          'rounded-circle',
+          isAvailable ? 'bg-primary' : 'bg-dark',
+        )}
       />
 
       <Image
@@ -34,52 +39,64 @@ export default function ProductItem({ product }: { product: Product }) {
         style={{ objectFit: 'contain' }}
       />
 
-      <div className={styles.item__info}>
-        <h5 className={styles.item__title}>{product.title}</h5>
-        <p className={styles.item__serial}>{product.serialNumber}</p>
+      <div
+        className="d-flex flex-column justify-content-between"
+        style={{ width: 400 }}
+      >
+        <h5 className={styles.item__title + ' m-0 text-decoration-underline'}>
+          {product.title}
+        </h5>
+        <p className="text-muted m-0">{product.serialNumber}</p>
       </div>
 
       <div
-        className={classNames(styles.item__status, {
-          [styles['item__status--available']]: isAvailable,
-        })}
+        style={{ width: 90 }}
+        className={isAvailable ? 'text-primary' : 'text-dark'}
       >
         {isAvailable ? 'available' : 'maintaining'}
       </div>
 
-      <div className={styles.item__guarantee}>
-        <div className={styles.item__guaranteeStart}>
-          {formattedStart}
-        </div>
+      <div className="text-dark" style={{ width: 100 }}>
+        <div className={styles.item__guaranteeStart}>{formattedStart}</div>
         <div className={styles.item__guaranteeEnd}>{formattedEnd}</div>
       </div>
 
-      <div className={styles.item__state}>
-        {isAvailable ? 'New' : 'Second-hand'}
+      <div style={{ width: 110 }}>{isAvailable ? 'New' : 'Second-hand'}</div>
+
+      <div className="d-flex flex-column" style={{ width: 100 }}>
+        <div className="text-muted">{product.price[0].value}$</div>
+        <div className="text-dark">{product.price[1].value}UAH</div>
       </div>
 
-      <div className={styles.item__prices}>
-        <div className={styles.item__usd}>{product.price[0].value}$</div>
-        <div className={styles.item__uah}>{product.price[1].value}UAH</div>
-      </div>
-
-      <div className={styles.item__typography}>
+      <div
+        className={
+          styles.item__typography + ' text-dark text-decoration-underline'
+        }
+      >
         Lorem, ipsum dolor sit amet consectetur adipisicing elit. Esse error
         officia veniam placeat molestiae corporis odit facilis in facere
         obcaecati?
       </div>
-      <div className={styles.item__typography}>
+      <div
+        className={
+          styles.item__typography + ' text-dark text-decoration-underline'
+        }
+      >
         Lorem, ipsum dolor sit amet consectetur adipisicing elit. Esse error
         officia veniam placeat molestiae corporis odit facilis in facere
         obcaecati?
       </div>
-      <div className={styles.item__typography}>
+      <div
+        className={
+          styles.item__typography + ' text-dark text-decoration-underline'
+        }
+      >
         Lorem, ipsum dolor sit amet consectetur adipisicing elit. Esse error
         officia veniam placeat molestiae corporis odit facilis in facere
         obcaecati?
       </div>
 
-      <button type="button" className="btn btn-light" onClick={deleteHandler}>
+      <button type="button" className="btn btn-danger" onClick={deleteHandler}>
         {<Icons.trash width={24} height={24} />}
       </button>
     </div>

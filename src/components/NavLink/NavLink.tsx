@@ -18,9 +18,13 @@ export default function NavLink(props: NavLinkProps) {
 
   return (
     <Link
-      className={classNames(className, styles.link, {
-        [styles['link--active']]: isActive,
-      })}
+      className={classNames(
+        className,
+        'text-body position-relative text-decoration-none text-uppercase p-1',
+        {
+          [styles['link--active']]: isActive,
+        },
+      )}
       {...restProps}
     >
       {children}

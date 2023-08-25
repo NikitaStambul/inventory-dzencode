@@ -1,10 +1,4 @@
 .link {
-  position: relative;
-  text-decoration: none;
-  text-transform: uppercase;
-  color: var(--color-foreground);
-  padding: 4px 8px;
-
   &--active::after {
     content: '';
     position: absolute;

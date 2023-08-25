@@ -27,11 +27,15 @@ export default function DeleteModal() {
     product && (
       <div className={styles.modal}>
         <div className={styles.modal__body}>
-          <div className={styles.modal__content}>
-            <h5 className={styles.modal__heading}>
-              Are you sure to delete this?
-            </h5>
-            <div className={classNames(styles.item, styles.modal__item)}>
+          <div className="p-4">
+            <h5 className="w-100 mb-2">Are you sure to delete this?</h5>
+            <div
+              className={classNames(
+                'd-flex align-items-center bg-white rounded p-2 gap-4 width-max-content',
+                styles.modal__item,
+              )}
+              style={{ height: 64 }}
+            >
               <span
                 className={classNames(styles.item__statusPoint, {
                   [styles['item__statusPoint--available']]:
@@ -47,14 +51,14 @@ export default function DeleteModal() {
                 style={{ objectFit: 'contain' }}
               />
 
-              <div className={styles.item__info}>
+              <div className="d-flex flex-column justify-content-space-between">
                 <h5 className={styles.item__title}>{product.title}</h5>
-                <p className={styles.item__serial}>{product.serialNumber}</p>
+                <p className="text-muted m-0">{product.serialNumber}</p>
               </div>
             </div>
           </div>
 
-          <div className={styles.modal__options}>
+          <div className="d-flex justify-content-end p-4 gap-6 w-100 bg-primary">
             <button
               type="button"
               className="btn btn-light"
@@ -65,7 +69,7 @@ export default function DeleteModal() {
 
             <button
               type="button"
-              className={classNames('btn btn-danger', styles.modal__delete)}
+              className="btn btn-danger d-flex align-items-center gap-2"
               onClick={deleteHandler}
             >
               {<Icons.trash />}

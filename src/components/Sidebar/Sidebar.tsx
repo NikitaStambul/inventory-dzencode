@@ -2,6 +2,7 @@ import styles from './Sidebar.module.scss';
 import NavLink from '../NavLink';
 import Image from 'next/image';
 import classNames from 'classnames';
+import { Icons } from '../Icons';
 
 const routes = [
   { title: 'Incoming', href: '/' },
@@ -13,31 +14,26 @@ const routes = [
 
 export default function Sidebar() {
   return (
-    <div className={classNames(styles.sidebar, 'shadow')}>
-      <div className={styles.sidebar__imageContainer}>
+    <aside className={classNames(styles.sidebar, 'shadow')}>
+      <div className="d-flex position-relative">
         <Image
           src="/user-image.png"
           width={100}
           height={100}
           alt="user image"
-          className={styles.sidebar__image}
+          className="d-flex rounded-circle"
         />
-        <button className={styles.sidebar__userSettings}>
-          <Image
-            src="/icons/gear.svg"
-            width={20}
-            height={20}
-            alt="gear image"
-          />
+      <button className={styles.sidebar__userSettings}>
+          <Icons.gear width={20} height={20} />
         </button>
       </div>
-      <nav className={styles.sidebar__nav}>
+      <nav className="d-flex flex-column align-items-center gap-3">
         {routes.map(({ href, title }) => (
           <NavLink key={href} href={href} className={styles.sidebar__link}>
             {title}
           </NavLink>
         ))}
       </nav>
-    </div>
+    </aside>
   );
 }

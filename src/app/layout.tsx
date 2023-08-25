@@ -5,8 +5,7 @@ import Providers from '@/components/Providers';
 import type { Metadata } from 'next';
 import { Inter } from 'next/font/google';
 import Header from '@/components/Header';
-import Sidebar from '@/components/Sidebar/Sidebar';
-import classNames from 'classnames';
+import Sidebar from '@/components/Sidebar';
 
 const inter = Inter({ subsets: ['latin'] });
 
@@ -24,11 +23,11 @@ export default function RootLayout({
     <html lang="en">
       <body className={inter.className}>
         <Providers>
-          <div className="vh-100 vw-100">
+          <div className="d-flex flex-column vh-100 vw-100">
             <Header />
-            <div className={styles.content}>
+            <div className="d-flex flex-grow-1">
               <Sidebar />
-              <main className={classNames(styles.main)}>{children}</main>
+              <main className={styles.main}>{children}</main>
             </div>
           </div>
         </Providers>

@@ -1,79 +1,12 @@
 .item {
-  display: flex;
-  align-items: center;
-  height: 64px;
-  background-color: #fff;
-  border-radius: 4px;
-  padding: 8px 32px;
-  gap: 16px;
-  width: max-content;
-
-  &__statusPoint {
-    width: 8px;
-    height: 8px;
-    border-radius: 50%;
-    background-color: hsl(200, 21%, 22%);
-
-    &--available {
-      background-color: var(--color-light-green);
-    }
-  }
-
-  &__info {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    width: 400px;
-  }
-
   &__title {
-    text-decoration: underline;
-    margin: 0;
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
   }
 
-  &__serial {
-    color: var(--color-foreground-muted);
-    margin: 0;
-  }
-
-  &__status {
-    width: 90px;
-
-    &--available {
-      color: var(--color-light-green);
-    }
-  }
-
-  &__guarantee {
-    width: 100px;
-    color: var(--color-foreground-secondary);
-  }
-
-  &__state {
-    width: 110px;
-  }
-
-  &__prices {
-    width: 100px;
-    display: flex;
-    flex-direction: column;
-  }
-
-  &__usd {
-    color: var(--color-foreground-muted);
-  }
-
-  &__uah {
-    color: var(--color-foreground-secondary);
-  }
-
   &__typography {
     width: 200px;
-    color: var(--color-foreground-secondary);
-    text-decoration: underline;
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
