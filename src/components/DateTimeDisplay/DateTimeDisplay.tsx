@@ -3,6 +3,7 @@
 import { Icons } from '@/components/Icons';
 import styles from './DateTimeDisplay.module.scss';
 import { useState, useEffect } from 'react';
+import { formatDate, formatTime } from '@/helpers/date-time-formatters';
 
 export default function DateTimeDisplay() {
   const [currentDateTime, setCurrentDateTime] = useState(new Date());
@@ -17,16 +18,8 @@ export default function DateTimeDisplay() {
     };
   }, []);
 
-  const formattedDate = currentDateTime.toLocaleDateString('en-US', {
-    year: 'numeric',
-    month: 'short',
-    day: 'numeric',
-  });
-
-  const formattedTime = currentDateTime.toLocaleTimeString('en-GB', {
-    hour: '2-digit',
-    minute: '2-digit',
-  });
+  const formattedDate = formatDate(currentDateTime);
+  const formattedTime = formatTime(currentDateTime);
 
   return (
     <div className={styles.dateTime}>

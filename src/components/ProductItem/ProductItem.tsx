@@ -5,6 +5,7 @@ import Image from 'next/image';
 import { useAppDispatch } from '@/store/hooks';
 import { setDeleteProduct } from '@/store/slices/deleteProductModalSlice';
 import { Icons } from '@/components/Icons';
+import { formatDate } from '@/helpers/date-time-formatters';
 
 export default function ProductItem({ product }: { product: Product }) {
   const dispatch = useAppDispatch();
@@ -13,6 +14,9 @@ export default function ProductItem({ product }: { product: Product }) {
   const deleteHandler = () => {
     dispatch(setDeleteProduct(product));
   };
+
+  const formattedStart = formatDate(new Date(product.guarantee.start));
+  const formattedEnd = formatDate(new Date(product.guarantee.end));
 
   return (
     <div className={styles.item}>
@@ -45,9 +49,9 @@ export default function ProductItem({ product }: { product: Product }) {
 
       <div className={styles.item__guarantee}>
         <div className={styles.item__guaranteeStart}>
-          {product.guarantee.start}
+          {formattedStart}
         </div>
-        <div className={styles.item__guaranteeEnd}>{product.guarantee.end}</div>
+        <div className={styles.item__guaranteeEnd}>{formattedEnd}</div>
       </div>
 
       <div className={styles.item__state}>

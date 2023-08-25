@@ -4,6 +4,7 @@ import { Icons } from '../Icons';
 import { Order } from '@/types/Order';
 import { useAppDispatch } from '@/store/hooks';
 import { selectOrder, unselectOrder } from '@/store/slices/ordersSlice';
+import { formatDate } from '@/helpers/date-time-formatters';
 
 export default function GroupItem({
   order,
@@ -13,11 +14,7 @@ export default function GroupItem({
   selected?: boolean;
 }) {
   const dispatch = useAppDispatch();
-  const formattedDate = new Date(order.date).toLocaleDateString('en-US', {
-    year: 'numeric',
-    month: 'short',
-    day: 'numeric',
-  });
+  const formattedDate = formatDate(new Date(order.date));
 
   const handleSelection = () => {
     dispatch(selectOrder(order.id));
