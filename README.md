@@ -1,5 +1,10 @@
 ## **Exploring the "Inventory (test-task)" Demonstration**
 
+**To set up the project locally:**
+
+1. Run `npm i` to install dependencies.
+2. Execute `npm run dev` to start the development server.
+
 **Technologies Explored:**
 
 **TypeScript:** bringing static typing benefits to JavaScript projects.
