@@ -23,7 +23,7 @@ export default function GroupsPage() {
             >
               +
             </button>
-            <h2 className={styles.page__title}>Groups / length</h2>
+            <h2 className={styles.page__title}>Groups / {orders.length}</h2>
           </div>
           <GroupsList orders={orders} selectedId={selected} />
         </>
