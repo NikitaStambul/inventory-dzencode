@@ -23,7 +23,17 @@ const ordersSlice = createSlice({
   initialState,
   reducers: {
     addOrder: (state, action) => {
-      state.orders.push(action.payload);
+      const newId =
+        state.orders.reduce((max, product) => {
+          return product.id > max ? product.id : max;
+        }, 0) + 1;
+      const newOrder: Order = {
+        ...action.payload,
+        id: newId,
+        date: new Date().toString(),
+      };
+
+      state.orders.unshift(newOrder);
     },
     selectOrder: (state, action) => {
       state.selected = action.payload;
@@ -37,9 +47,7 @@ const ordersSlice = createSlice({
       const order = state.orders.find((order) => order.id === orderId);
 
       if (order) {
-        order.products = order.products.filter(
-          (product) => product.id !== productId,
-        );
+        order.products = order.products.filter((id) => id !== productId);
       }
     },
   },

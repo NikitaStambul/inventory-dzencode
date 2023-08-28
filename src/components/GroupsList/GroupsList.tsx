@@ -1,7 +1,8 @@
 import { Order } from '@/types/Order';
-import GroupItem from '../GroupItem/GroupItem';
+import GroupItem from '../GroupItem';
 import styles from './GroupsList.module.scss';
-import GroupProductsList from '../GroupProductsList/GroupProductsList';
+import GroupProductsList from '../GroupProductsList';
+import { useAppSelector } from '@/store/hooks';
 
 export default function GroupsList({
   orders,
@@ -10,7 +11,11 @@ export default function GroupsList({
   orders: Order[];
   selectedId?: number;
 }) {
+  const { products } = useAppSelector((state) => state.productsState);
   const selectedOrder = orders.find((order) => order.id === selectedId);
+  const oderProducts = products.filter((product) =>
+    selectedOrder?.products.includes(product.id),
+  );
 
   return (
     <div className={styles.list}>
@@ -27,10 +32,7 @@ export default function GroupsList({
         {selectedOrder ? (
           <>
             <h4 className={styles.list__title}>{selectedOrder.title}</h4>
-            <GroupProductsList
-              products={selectedOrder.products}
-              orderId={selectedId!}
-            />
+            <GroupProductsList products={oderProducts} orderId={selectedId!} />
           </>
         ) : (
           <h2 className={styles.list__noSelected}>
