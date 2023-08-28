@@ -20,10 +20,6 @@ export default function GroupItem({
     dispatch(selectOrder(order.id));
   };
 
-  const handleUnselect = () => {
-    dispatch(unselectOrder());
-  };
-
   return (
     <div className={styles.item}>
       <button
@@ -42,7 +38,7 @@ export default function GroupItem({
       <div className={styles.item__date}>{formattedDate}</div>
 
       {selected && (
-        <div className={styles.item__selected} onClick={handleUnselect}>
+        <div className={styles.item__selected}>
           <Icons.selected />
         </div>
       )}

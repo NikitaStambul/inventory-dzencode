@@ -13,8 +13,8 @@ export default function GroupsList({
 }) {
   const { products } = useAppSelector((state) => state.productsState);
   const selectedOrder = orders.find((order) => order.id === selectedId);
-  const oderProducts = products.filter((product) =>
-    selectedOrder?.products.includes(product.id),
+  const oderProducts = products.filter(
+    (product) => selectedOrder?.products.includes(product.id),
   );
 
   return (
@@ -28,16 +28,19 @@ export default function GroupsList({
           />
         ))}
       </div>
-      <div className={styles.list__products + ' d-flex flex-column rounded border bg-white'}>
+      <div
+        className={
+          styles.list__products +
+          ' d-flex flex-column rounded border bg-white position-relative'
+        }
+      >
         {selectedOrder ? (
           <>
             <h4 className="mb-0 p-4">{selectedOrder.title}</h4>
             <GroupProductsList products={oderProducts} orderId={selectedId!} />
           </>
         ) : (
-          <h2 className="mb-0 p-4">
-            There is no order selected
-          </h2>
+          <h2 className="mb-0 p-4">There is no order selected</h2>
         )}
       </div>
     </div>

@@ -22,7 +22,7 @@ export default function GroupProductItem({
 
   return (
     <div
-      style={{ height: 64 }}
+      style={{ height: 64, minWidth: 'fit-content' }}
       className="d-flex align-items-center bg-white gap-4 py-0 px-4 w-100 border-top border-bottom"
     >
       <span

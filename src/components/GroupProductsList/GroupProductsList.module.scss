@@ -1,3 +1,8 @@
 .list {
-  min-width: fit-content;
+  overflow: auto;
+
+  &__close {
+    top: 4px;
+    right: 4px;
+  }
 }
