@@ -3,7 +3,7 @@ import styles from './GroupItem.module.scss';
 import { Icons } from '../Icons';
 import { Order } from '@/types/Order';
 import { useAppDispatch } from '@/store/hooks';
-import { selectOrder, unselectOrder } from '@/store/slices/ordersSlice';
+import { selectOrder } from '@/store/slices/ordersSlice';
 import { formatDate } from '@/helpers/date-time-formatters';
 
 export default function GroupItem({

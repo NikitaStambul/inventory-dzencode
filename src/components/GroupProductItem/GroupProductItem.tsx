@@ -52,7 +52,7 @@ export default function GroupProductItem({
         {isAvailable ? 'available' : 'maintaining'}
       </div>
 
-      <button type="button" className="btn btn-light" onClick={deleteHandler}>
+      <button type="button" className="btn btn-danger" onClick={deleteHandler}>
         {<Icons.trash width={24} height={24} />}
       </button>
     </div>
