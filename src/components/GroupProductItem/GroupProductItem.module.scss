@@ -1,12 +1,4 @@
 .item {
-  display: flex;
-  align-items: center;
-  height: 64px;
-  background-color: #fff;
-  gap: 16px;
-  padding: 0 24px;
-  width: 100%;
-
   &:hover {
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     transform: translateY(-4px);
@@ -25,9 +17,6 @@
   }
 
   &__info {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
     width: 600px;
     flex: 1;
   }

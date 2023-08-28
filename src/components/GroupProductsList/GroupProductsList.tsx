@@ -10,7 +10,7 @@ export default function GroupProductsList({
   orderId: number;
 }) {
   return (
-    <div className={styles.list}>
+    <div className={styles.list + ' pb-4 w-100'}>
       {products.map((product) => (
         <GroupProductItem
           key={product.id}

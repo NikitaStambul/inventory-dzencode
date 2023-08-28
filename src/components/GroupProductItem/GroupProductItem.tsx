@@ -21,7 +21,10 @@ export default function GroupProductItem({
   };
 
   return (
-    <div className={styles.item + ' border-top border-bottom'}>
+    <div
+      style={{ height: 64 }}
+      className="d-flex align-items-center bg-white gap-4 py-0 px-4 w-100 border-top border-bottom"
+    >
       <span
         className={classNames(styles.item__statusPoint, {
           [styles['item__statusPoint--available']]: isAvailable,
@@ -36,7 +39,7 @@ export default function GroupProductItem({
         style={{ objectFit: 'contain' }}
       />
 
-      <div className={styles.item__info}>
+      <div className={styles.item__info + ' d-flex flex-column justify-content-between'}>
         <h5 className={styles.item__title}>{product.title}</h5>
         <p className={styles.item__serial}>{product.serialNumber}</p>
       </div>

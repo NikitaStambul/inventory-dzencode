@@ -18,8 +18,8 @@ export default function GroupsList({
   );
 
   return (
-    <div className={styles.list}>
-      <div className={styles.list__groups}>
+    <div className={styles.list + ' d-flex w-100 gap-6'}>
+      <div className="d-flex flex-column gap-3 h-100">
         {orders.map((order) => (
           <GroupItem
             order={order}
@@ -28,14 +28,14 @@ export default function GroupsList({
           />
         ))}
       </div>
-      <div className={styles.list__products + ' border'}>
+      <div className={styles.list__products + ' d-flex flex-column rounded border bg-white'}>
         {selectedOrder ? (
           <>
-            <h4 className={styles.list__title}>{selectedOrder.title}</h4>
+            <h4 className="mb-0 p-4">{selectedOrder.title}</h4>
             <GroupProductsList products={oderProducts} orderId={selectedId!} />
           </>
         ) : (
-          <h2 className={styles.list__noSelected}>
+          <h2 className="mb-0 p-4">
             There is no order selected
           </h2>
         )}
